@@ -28,7 +28,6 @@ function winCondition() {
     
 } 
 
-
 /*Rounds and players*/
 let round = 1;
 let player = "";
@@ -45,26 +44,22 @@ function btnPressed(e) {
                 btn.innerHTML = "O";
             }
         }
+        
          else {
             return false;
         }
     }
     if (winCondition()) {
-    let announcementWinner = document.createElement("h2");
-    announcementWinner.innerHTML = `Enhorabuena ${player}, has ganado!`;
-    let title = document.getElementById("winner-title");
-    title.appendChild(announcementWinner);
+        document.querySelectorAll('button').forEach((button) =>  button.disabled = true)
+        let announcementWinner = document.createElement("h2");
+        announcementWinner.innerHTML = `Enhorabuena ${player}, has ganado!` ;
+        let title = document.getElementById('winner-title');
+        title.appendChild(announcementWinner);
+
     }
-    
+   if (!winCondition() && round == 10) {
+       alert('habeis empatado')
+   }
 }
 document.querySelectorAll('button').forEach((button) =>  button.addEventListener('click', event => btnPressed(event)));
 
-/*function resetGame() {
-    document.querySelectorAll('button').forEach((button) =>  button.innerHTML = "");
-}
-let resetButton = document.getElementsByClassName('reset-btn');
-/*resetButton.addEventListener('click',resetGame());*/
-/*var deleteLink = document.querySelector('.delete');
-
-deleteLink.addEventListener('click', function(event) {
-    event.preventDefault();*/
