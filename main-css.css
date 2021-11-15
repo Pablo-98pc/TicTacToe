@@ -1,0 +1,117 @@
+body {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes bounce {
+    0% {transform: translateY(-20%);
+    }
+    100% {transform: translateY(0%);}
+}
+h2 {
+    animation: bounce .5s alternate  ease-in;
+    animation-iteration-count: 9;
+    padding-left: 700px;
+    padding-top: 30px;
+    font-family: Copperplate,Papyrus;
+    color:linear-gradient(to right, #000000, #434343);
+}
+button {
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    background: linear-gradient(to right, #fc5c7d, #6a82fb);
+}
+.container{
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    margin-top: 250px;
+}
+
+.cube{
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    animation: loop 10s linear infinite;
+}
+
+.cube button{
+    position: absolute;
+    opacity: 0.8;
+    width: inherit;
+}
+
+.cube button:nth-child(1){
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.cube button:nth-child(2){
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube button:nth-child(3){
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube button:nth-child(4){
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube button:nth-child(5){
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube button:nth-child(6){
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes loop{
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+.setGame {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 150px;
+    padding-left: 800px;
+}
+a {
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    background: linear-gradient(to right, #c9ffbf, #ffafbd);
+    text-shadow: .5px .5px;
+    border: 1px black solid;
+    padding: 10px;
+    width: 350px;
+}
+a:hover{
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+}
+@media (max-width:975px) {
+    h2{
+        padding-left: 100px;
+    }
+    .setGame{
+        padding-left: 100px;
+    }
+}
+@media (max-width:700px) {
+    h2 {
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    .setGame {
+        padding-left: 10px;
+    }
+}
